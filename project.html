@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Documentation - Fundamentals of Computing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('photo.jpg');
+            background-size: cover;
+            color: #fff;
+        }
+        .navbar li a:hover, .navbar .navbar-brand:hover {
+            transform: translateY(-2px);
+        }
+        .navbar {
+            margin-bottom: 0;
+            background-color: rgba(128, 0, 128, 0.9);
+            border: 0;
+            font-size: 14px !important;
+            letter-spacing: 3px;
+        }
+        .navbar li a, .navbar .navbar-brand {
+            color: #d5d5d5 !important;
+        }
+        footer {
+            background-color: rgba(128, 0, 128, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+        .info-section {
+            background-color: rgba(169, 169, 169, 0.8);
+            color: darkblue;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .project-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .project-images a {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+        }
+        .project-images img {
+            width: 100%;  /* Ensures all images are scaled equally */
+            height: auto;  /* Maintain aspect ratio */
+            border-radius: 8px; /* For rounded corners */
+        }
+        .project-title {
+            margin-top: 5px;
+            font-weight: normal;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            text-align: center;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .project-images a {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .project-images a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="prac.html">FUNDAMENTALS OF COMPUTING</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="prac.html">HOME</a></li>
+                <li><a href="course.html">COURSE</a></li>
+                <li><a href="project.html">PROJECT</a></li>
+                <li><a href="presentation.html">PRESENTATION</a></li>
+                <li><a href="database.html">DATABASE</a></li>
+                <li><a href="documentation.html">DOCUMENTATION</a></li>
+                <li><a href="dev_team.html">DEV TEAM</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<main class="container" style="padding-top: 70px;">
+    <h1></h1>
+    <section class="info-section">
+        <h2>PROJECTS</h2>
+
+        <div class="project-images">
+            <a href="num.html">
+                <img src="binary.jpeg" alt="Binary Conversion">
+                <div class="project-title">BINARY CONVERTION</div>
+            </a>
+            <a href="easyand.html">
+                <img src="andga.png" alt="AND Gate">
+                <div class="project-title">AND GATE</div>
+            </a>
+            <a href="ascii.html">
+                <img src="asc.png" alt="ASCII Table">
+                <div class="project-title">ASCII TABLE</div>
+            </a>
+        </div>
+
+        <div class="project-images">
+            <a href="unicode.html">
+                <img src="uni1.jpg" alt="Project 4">
+                <div class="project-title">UNICODE</div>
+            </a>
+            <a href="MLinstructions.html">
+                <img src="MLblank.png" alt="Project 5">
+                <div class="project-title">MACHINE LANGUAGE</div>
+            </a>
+            <a href="binarytohex.html">
+                <img src="bintohex.jpg" alt="Project 6">
+                <div class="project-title">BINARY TO HEXADECIMAL</div>
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emil Rivas - Resume</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .profile-image {
+            width: 100px; /* Adjust the size of the image */
+            float: right; /* Align the image to the right */
+            margin-left: 20px; /* Add some space between text and the image */
+            border-radius: 10px; /* Add rounded corners */
+        }
+        .emoji {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+        /* Hide radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+        /* Label styling */
+        label {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #000;
+            margin: 0 5px;
+            display: inline-block;
+        }
+        /* Show smiley by default */
+        #smiley:checked ~ .emoji-smiley {
+            display: inline-block;
+        }
+        /* Hide sad face by default */
+        #sad:checked ~ .emoji-sad {
+            display: inline-block;
+        }
+        /* Hide the non-checked emoji */
+        .emoji-sad, .emoji-smiley {
+            display: none;
+        }
+        #smiley:checked ~ .emoji-sad {
+            display: none;
+        }
+        #sad:checked ~ .emoji-smiley {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Header Section -->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="display-4">Emil Rivas</h1>
+                <p class="lead">Benque Viejo Road, Cayo, Belize</p>
+            </div>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <img src="emilpic.jpeg" alt="Emil Rivas" class="profile-image"> <!-- Adjusted class -->
+                <h3>About Me</h3>
+                <p class="text-justify">
+                    I am a passionate computer science student at the University of Belize, focused on improving my skills 
+                    in programming and web development. Moreover, I enjoy tackling challenges and continuously learning new technologies.
+                </p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Skills</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item">C++</li>
+                            <li class="list-group-item">HTML</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item">Web Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Project Section: Toggle between Smiley and Sad Face -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Toggle between Smiley and Sad Face</h3>
+
+                <!-- Emoji Toggle Section -->
+                <input type="radio" id="smiley" name="emoji-toggle" checked>
+                <input type="radio" id="sad" name="emoji-toggle">
+                
+                <!-- Smiley Emoji -->
+                <div class="emoji emoji-smiley">😊</div>
+                
+                <!-- Sad Emoji -->
+                <div class="emoji emoji-sad">😢</div>
+                
+                <!-- Buttons to toggle the emojis -->
+                <label for="smiley">Smile</label>
+                <label for="sad">Sad</label>
+            </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Contact Information</h3>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><strong>Email:</strong></td>
+                            <td>emilrivas102@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phone:</strong></td>
+                            <td>+501 606-2279</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

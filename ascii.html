@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FoC</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        img {
+            float: left;
+            padding-right: 40px; 
+            padding-left: 40px;
+            padding-bottom: 40px;
+        }
+        section {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h2>Project 1: ASCII</h2>
+    <hr>	
+    <p><img src="ascii.png" style="width:792px;height:528px;" alt="ASCII Art"></p>
+    <p>Enter any number from 0 to 127:</p>
+    <input id="inputdec" type="number" min="0" max="127" required>
+    <p></p>
+    <button onclick="decToASCII()">Submit</button>
+    <p></p>
+    <p>ASCII Value:</p>
+    <p id="demo"></p>
+    <p id="error" style="color: red;"></p>
+</section>
+
+<button onclick="goBack()" class="btn btn-primary">Back to Project</button>
+
+<footer>
+    <p>@ Powered by UB</p>
+</footer>
+
+<script>
+function decToASCII() {
+    const x = document.getElementById("inputdec").value;
+    const errorElement = document.getElementById("error");
+    errorElement.innerHTML = ""; // Clear previous error messages
+
+    if (x < 0 || x > 127 || isNaN(x)) {
+        errorElement.innerHTML = "Please enter a valid number between 0 and 127.";
+        document.getElementById("demo").innerHTML = ""; // Clear previous result
+        return;
+    }
+
+    const res = String.fromCharCode(x);
+    document.getElementById("demo").innerHTML = res;
+    console.log(res);
+}
+
+function goBack() {
+    window.location.href = "project.html"; // Change to your project page URL
+}
+</script>
+
+</body>
+</html>

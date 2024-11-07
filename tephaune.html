@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tephaune Frazer's Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #1e1e1e; 
+            color: #f4f4f4;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #f4f4f4; 
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #2c2c2c;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .skills, .schedule {
+            margin-top: 20px;
+        }
+
+        .skills ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #444;
+        }
+
+        th {
+            background-color: #444;
+            color: #f4f4f4;
+        }
+
+        td {
+            background-color: #333; 
+            color: #f4f4f4;
+        }
+
+        .schedule h2 {
+            text-align: center;
+            color: #f4f4f4;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 220px; /* Adjust width to match one image */
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 200px;
+            margin: 0 10px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            margin-top: -15px;
+            background-color: #444;
+            color: white;
+            border: none;
+            outline: none;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .prev:hover, .next:hover {
+            opacity: 1;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Style for the experience section */
+        .experience {
+            display: flex;
+            justify-content: center; /* Centers the content horizontally */
+            align-items: center; /* Centers the content vertically */
+            flex-direction: column; /* Keeps text and heading vertical */
+            text-align: center; /* Centers the text inside */
+            background-color: #2c2c2c;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            width: 70%; /* Adjust this width as needed */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile">
+            <img src="Tephaune.jpg" alt="Tephaune">
+            <h1>Tephaune Frazer</h1>
+        </div>
+
+        <div class="contact-info">
+            <p>9679 Egoli Estate, Belmopan</p>
+            <p>Student at the <a href="https://www.ubelearn.com/">University of Belize!</a></p>
+        </div>
+
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>C++</li>
+                <li>HTML</li>
+            </ul>
+        </div>
+
+        <div class="schedule">
+            <h2>Class Schedule</h2>
+            <table>
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td>Programming I - Ethics - College English I</td>
+                    <td>Trigonometry - Fundamentals of Computing - Intermediate Algebra</td>
+                    <td>Programming I - Ethics - College English I</td>
+                    <td>Trigonometry - Fundamentals of Computing - Intermediate Algebra</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="experience">
+            <h2>Experience</h2>
+            <p>As a dedicated and tech-savvy 16-year-old, I am passionate about pursuing an Associate Degree in 
+            Information Technology to deepen my understanding of computer systems, programming, and digital innovation. 
+            My ambition stems from a strong interest in technology and problem-solving, 
+            which I have developed through hands-on experience with coding and IT-related projects. 
+            I am eager to build a career in this fast-paced, ever-evolving field, 
+            where I can combine my creativity and technical skills to contribute to meaningful technological advancements. 
+            By earning this degree, I aim to lay a solid foundation for future growth and opportunities in the tech industry.</p>
+        </div>
+
+        <!-- Carousel for scrolling images -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="ub.jfif" alt="University of Belize">
+                <img src="ub1.jpg" alt="Image 1">
+                <img src="ub2.jpg" alt="Image 2">
+                <img src="ub3.jpg" alt="Image 3">
+            </div>
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        
+        function moveCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
+            const images = document.querySelectorAll('.carousel img');
+            const totalImages = images.length;
+            currentSlide = (currentSlide + direction + totalImages) % totalImages;
+            const offset = -currentSlide * (images[0].offsetWidth + 20); // 20px is for margin between images
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
+    </script>
+</body>
+</html>

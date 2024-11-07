@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Binary Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f8ff; /* Light background color */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input {
+            padding: 20px;
+            margin: 10px;
+            width: 350px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 20px 25px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result, #binaryResult {
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+            width: 80%;
+            max-width: 500px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .back-button {
+            margin-top: 30px;
+            padding: 15px 20px;
+            font-size: 18px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #007B8C;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text to Binary Converter</h1>
+    <p>Enter a number, letter, or word:</p>
+    <input type="text" id="inputText" placeholder="Enter text here">
+    <button onclick="convertToBinary()">Convert to Binary</button>
+    <div id="result"></div>
+
+    <h2>Binary to Text Converter</h2>
+    <p>Enter binary (separated by spaces):</p>
+    <input type="text" id="inputBinary" placeholder="Enter binary here">
+    <button onclick="convertToText()">Convert to Text</button>
+    <div id="binaryResult"></div>
+
+    <!-- Go Back Button -->
+    <button class="back-button" onclick="window.location.href='project.html'">Go Back to Project</button>
+
+    <script>
+        function convertToBinary() {
+            const input = document.getElementById('inputText').value.trim();
+
+            if (!input) {
+                alert("Please enter some text to convert.");
+                return;
+            }
+
+            let binaryResult = '';
+            for (let i = 0; i < input.length; i++) {
+                binaryResult += input[i].charCodeAt(0).toString(2).padStart(8, '0') + ' ';
+            }
+
+            document.getElementById('result').textContent = binaryResult.trim();
+            document.getElementById('inputText').value = ''; // Clear input after conversion
+        }
+
+        function convertToText() {
+            const binaryInput = document.getElementById('inputBinary').value.trim();
+
+            if (!binaryInput) {
+                alert("Please enter some binary values.");
+                return;
+            }
+
+            const binaryArray = binaryInput.split(' ');
+            let textResult = '';
+
+            for (let binary of binaryArray) {
+                // Validate if each part is a valid binary string
+                if (/^[01]{8}$/.test(binary)) {
+                    textResult += String.fromCharCode(parseInt(binary, 2));
+                } else {
+                    textResult += '[Invalid Binary]';
+                    break;
+                }
+            }
+
+            document.getElementById('binaryResult').textContent = textResult;
+            document.getElementById('inputBinary').value = ''; // Clear input after conversion
+        }
+    </script>
+</body>
+</html>
